@@ -482,6 +482,87 @@ footer p { font-size: 12px; color: var(--gray); }
   </div>
 </section>
 
+<!-- REGISTRATION FORM -->
+<section style="padding: 100px 64px; border-top: 1px solid rgba(255,255,255,0.06);" id="register">
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;">
+
+    <div>
+      <div style="font-size:10px; letter-spacing:4px; text-transform:uppercase; color:#00E5A0; margin-bottom:16px;">Начать</div>
+      <div style="font-family:'Unbounded',sans-serif; font-size:38px; font-weight:900; letter-spacing:-1px; line-height:1.15; margin-bottom:24px;">Получи карту за 5 минут</div>
+      <p style="color:#707080; font-size:15px; line-height:1.7; margin-bottom:32px;">Оставь заявку — мы напишем тебе в Telegram и поможем оформить карту. Без очередей и лишних документов.</p>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; align-items:center; gap:12px; font-size:14px; color:#707080;">
+          <div style="width:32px; height:32px; background:rgba(0,229,160,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0;">⚡</div>
+          Выпуск виртуальной карты за 5 минут
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; font-size:14px; color:#707080;">
+          <div style="width:32px; height:32px; background:rgba(0,229,160,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0;">🌍</div>
+          Работает в 150+ странах
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; font-size:14px; color:#707080;">
+          <div style="width:32px; height:32px; background:rgba(0,229,160,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0;">🔒</div>
+          Защита 3D Secure
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#10101A; border:1px solid rgba(255,255,255,0.06); border-radius:20px; padding:40px;">
+      <div style="font-size:16px; font-weight:500; margin-bottom:28px;">Оставить заявку</div>
+
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div>
+          <div style="font-size:12px; color:#707080; margin-bottom:8px; letter-spacing:0.5px;">Ваше имя</div>
+          <input type="text" placeholder="Иван Иванов" style="width:100%; background:#08080F; border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:14px 16px; color:white; font-size:14px; outline:none;" onfocus="this.style.borderColor='#00E5A0'" onblur="this.style.borderColor='rgba(255,255,255,0.08)'" id="reg-name">
+        </div>
+
+        <div>
+          <div style="font-size:12px; color:#707080; margin-bottom:8px; letter-spacing:0.5px;">Email</div>
+          <input type="email" placeholder="ivan@gmail.com" style="width:100%; background:#08080F; border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:14px 16px; color:white; font-size:14px; outline:none;" onfocus="this.style.borderColor='#00E5A0'" onblur="this.style.borderColor='rgba(255,255,255,0.08)'" id="reg-email">
+        </div>
+
+        <div>
+          <div style="font-size:12px; color:#707080; margin-bottom:8px; letter-spacing:0.5px;">Telegram username</div>
+          <input type="text" placeholder="@username" style="width:100%; background:#08080F; border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:14px 16px; color:white; font-size:14px; outline:none;" onfocus="this.style.borderColor='#00E5A0'" onblur="this.style.borderColor='rgba(255,255,255,0.08)'" id="reg-tg">
+        </div>
+
+        <div>
+          <div style="font-size:12px; color:#707080; margin-bottom:8px; letter-spacing:0.5px;">Тип карты</div>
+          <select style="width:100%; background:#08080F; border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:14px 16px; color:white; font-size:14px; outline:none; appearance:none;" onfocus="this.style.borderColor='#00E5A0'" onblur="this.style.borderColor='rgba(255,255,255,0.08)'" id="reg-type">
+            <option value="virtual">💳 Виртуальная карта — $10</option>
+            <option value="physical">💳 Физическая карта — $100 + доставка</option>
+          </select>
+        </div>
+
+        <button onclick="submitForm()" style="width:100%; background:#00E5A0; color:#08080F; padding:16px; border-radius:10px; font-size:15px; font-weight:700; border:none; cursor:pointer; margin-top:8px; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+          Получить карту →
+        </button>
+
+        <div style="font-size:12px; color:#505060; text-align:center; line-height:1.6;">
+          Нажимая кнопку, вы соглашаетесь с условиями использования сервиса
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function submitForm() {
+  const name = document.getElementById('reg-name').value;
+  const email = document.getElementById('reg-email').value;
+  const tg = document.getElementById('reg-tg').value;
+  const type = document.getElementById('reg-type').value;
+
+  if (!name || !email || !tg) {
+    alert('Пожалуйста, заполните все поля');
+    return;
+  }
+
+  const tgUsername = tg.replace('@', '');
+  window.open('https://t.me/RenexPayBot?start=register', '_blank');
+}
+</script>
+
 <!-- FAQ -->
 <section style="padding: 100px 64px; border-top: 1px solid rgba(255,255,255,0.06);" id="faq">
   <div style="font-size:10px; letter-spacing:4px; text-transform:uppercase; color:#00E5A0; margin-bottom:16px;">FAQ</div>
