@@ -290,50 +290,56 @@ footer p { font-size: 12px; color: var(--gray); }
 
 /* MOBILE */
 @media (max-width: 768px) {
-  nav { padding: 0 20px; height: 60px; }
+  * { max-width: 100% !important; }
+  body { overflow-x: hidden; width: 100%; }
+
+  nav { padding: 0 16px !important; height: 60px !important; width: 100%; }
   nav ul { display: none !important; }
-  .logo-name { font-size: 13px; }
-  .nav-cta { padding: 8px 18px; font-size: 12px; }
+  .logo-name { font-size: 13px !important; }
+  .nav-cta { padding: 8px 16px !important; font-size: 12px !important; }
 
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-left { padding: 48px 20px 32px; }
-  h1 { font-size: 36px; }
-  .hero-sub { font-size: 14px; }
-  .hero-btns { flex-direction: column; }
-  .btn-main, .btn-sec { width: 100%; text-align: center; }
-  .hero-trust { gap: 24px; }
-  .trust-num { font-size: 22px; }
-  .hero-right { display: none; }
+  .hero { grid-template-columns: 1fr !important; min-height: auto !important; width: 100%; }
+  .hero-left { padding: 40px 16px 32px !important; width: 100%; }
+  .hero-glow { display: none; }
+  h1 { font-size: 34px !important; letter-spacing: -0.5px !important; }
+  .hero-sub { font-size: 14px !important; }
+  .hero-btns { flex-direction: column !important; gap: 10px !important; }
+  .btn-main { width: 100% !important; text-align: center !important; }
+  .btn-sec { width: 100% !important; text-align: center !important; }
+  .hero-trust { gap: 20px !important; flex-wrap: wrap; }
+  .trust-num { font-size: 22px !important; }
+  .hero-right { display: none !important; }
 
-  .rates-header { padding: 16px 20px; flex-direction: column; align-items: flex-start; gap: 8px; }
-  .rates-grid { grid-template-columns: 1fr; }
-  .rate-card { padding: 20px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .rate-card:last-child { border-bottom: none; }
-  .rate-forex-buy { font-size: 28px; }
+  .rates-section { width: 100%; }
+  .rates-header { padding: 16px !important; flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
+  .rates-grid { grid-template-columns: 1fr !important; width: 100%; }
+  .rate-card { padding: 16px !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.06) !important; width: 100%; }
+  .rate-card:last-child { border-bottom: none !important; }
+  .rate-forex-buy { font-size: 26px !important; }
 
-  .how { padding: 60px 20px; }
-  .sec-h2 { font-size: 28px; margin-bottom: 40px; }
-  .steps { grid-template-columns: 1fr; gap: 32px; }
-  .step { padding: 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 32px; }
-  .step:last-child { border-bottom: none; padding-bottom: 0; }
-  .step-num { font-size: 36px; margin-bottom: 12px; }
+  .how { padding: 48px 16px !important; width: 100%; }
+  .sec-h2 { font-size: 26px !important; margin-bottom: 32px !important; }
+  .steps { grid-template-columns: 1fr !important; gap: 0 !important; width: 100%; }
+  .step { padding: 0 0 24px 0 !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.06) !important; margin-bottom: 24px; }
+  .step:last-child { border-bottom: none !important; margin-bottom: 0; }
+  .step-num { font-size: 36px !important; margin-bottom: 10px !important; }
 
-  .features { padding: 60px 20px; }
-  .feat-grid { grid-template-columns: 1fr; }
+  .features { padding: 48px 16px !important; width: 100%; }
+  .feat-grid { grid-template-columns: 1fr !important; }
+  .feat-card { width: 100%; }
 
-  section[id="register"] { padding: 60px 20px; }
-  section[id="register"] > div { grid-template-columns: 1fr; gap: 40px; }
+  section[id="register"] { padding: 48px 16px !important; width: 100%; }
+  section[id="register"] > div { grid-template-columns: 1fr !important; gap: 32px !important; }
 
-  section[id="faq"] { padding: 60px 20px; }
-  section[id="faq"] .sec-h2, section[id="faq"] > div > div:first-child { font-size: 28px; }
+  section[id="faq"] { padding: 48px 16px !important; width: 100%; }
 
-  section[id="pricing"] { padding: 60px 20px; }
-  section[id="pricing"] > div:nth-child(3) { grid-template-columns: 1fr; }
+  section[id="pricing"] { padding: 48px 16px !important; width: 100%; }
+  section[id="pricing"] > div:nth-child(3) { grid-template-columns: 1fr !important; }
 
-  .cta { padding: 60px 20px; }
-  .cta h2 { font-size: 32px; }
+  .cta { padding: 48px 16px !important; }
+  .cta h2 { font-size: 28px !important; }
 
-  footer { padding: 32px 20px; flex-direction: column; gap: 16px; text-align: center; }
+  footer { padding: 32px 16px !important; flex-direction: column !important; gap: 16px !important; text-align: center !important; }
 }
 </style>
 </head>
