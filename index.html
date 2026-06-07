@@ -481,6 +481,129 @@ footer p { font-size: 12px; color: var(--gray); }
   </div>
 </section>
 
+<!-- FAQ -->
+<section style="padding: 100px 64px; border-top: 1px solid rgba(255,255,255,0.06);" id="faq">
+  <div style="font-size:10px; letter-spacing:4px; text-transform:uppercase; color:#00E5A0; margin-bottom:16px;">FAQ</div>
+  <div style="font-family:'Unbounded',sans-serif; font-size:38px; font-weight:900; letter-spacing:-1px; margin-bottom:64px; line-height:1.15; max-width:500px;">Частые вопросы</div>
+  <div style="display:flex; flex-direction:column; gap:12px; max-width:800px;">
+
+    <div class="faq-item" style="background:#10101A; border:1px solid rgba(255,255,255,0.06); border-radius:14px; overflow:hidden;">
+      <div onclick="toggleFaq(this)" style="padding:24px 28px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:15px; font-weight:500;">
+        Как получить карту?
+        <span style="font-size:20px; color:#00E5A0; transition:transform 0.3s;">+</span>
+      </div>
+      <div class="faq-answer" style="display:none; padding:0 28px 24px; color:#707080; font-size:14px; line-height:1.7;">
+        Напиши боту <strong style="color:#00E5A0;">@RenexPayBot</strong> в Telegram, нажми /start, выбери "Мои карты" и нажми /order_card. Введи своё имя латиницей и оплати выпуск карты. Виртуальная карта будет готова за 5 минут.
+      </div>
+    </div>
+
+    <div class="faq-item" style="background:#10101A; border:1px solid rgba(255,255,255,0.06); border-radius:14px; overflow:hidden;">
+      <div onclick="toggleFaq(this)" style="padding:24px 28px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:15px; font-weight:500;">
+        Сколько времени занимает выпуск виртуальной карты?
+        <span style="font-size:20px; color:#00E5A0; transition:transform 0.3s;">+</span>
+      </div>
+      <div class="faq-answer" style="display:none; padding:0 28px 24px; color:#707080; font-size:14px; line-height:1.7;">
+        Виртуальная карта выпускается за <strong style="color:white;">5 минут</strong> после оплаты. Физическая карта доставляется за 7–14 дней в зависимости от страны.
+      </div>
+    </div>
+
+    <div class="faq-item" style="background:#10101A; border:1px solid rgba(255,255,255,0.06); border-radius:14px; overflow:hidden;">
+      <div onclick="toggleFaq(this)" style="padding:24px 28px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:15px; font-weight:500;">
+        Можно ли добавить карту в Apple Pay или Google Pay?
+        <span style="font-size:20px; color:#00E5A0; transition:transform 0.3s;">+</span>
+      </div>
+      <div class="faq-answer" style="display:none; padding:0 28px 24px; color:#707080; font-size:14px; line-height:1.7;">
+        Да! Виртуальную карту RenexPay можно добавить в <strong style="color:white;">Apple Pay и Google Pay</strong> и использовать для бесконтактной оплаты в магазинах.
+      </div>
+    </div>
+
+    <div class="faq-item" style="background:#10101A; border:1px solid rgba(255,255,255,0.06); border-radius:14px; overflow:hidden;">
+      <div onclick="toggleFaq(this)" style="padding:24px 28px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:15px; font-weight:500;">
+        В каких странах работает карта?
+        <span style="font-size:20px; color:#00E5A0; transition:transform 0.3s;">+</span>
+      </div>
+      <div class="faq-answer" style="display:none; padding:0 28px 24px; color:#707080; font-size:14px; line-height:1.7;">
+        Карта работает в <strong style="color:white;">150+ странах</strong> где принимают Visa. Онлайн оплата доступна глобально — Netflix, Amazon, Google, Steam и тысячи других сервисов.
+      </div>
+    </div>
+
+    <div class="faq-item" style="background:#10101A; border:1px solid rgba(255,255,255,0.06); border-radius:14px; overflow:hidden;">
+      <div onclick="toggleFaq(this)" style="padding:24px 28px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:15px; font-weight:500;">
+        Как пополнить баланс через USDT?
+        <span style="font-size:20px; color:#00E5A0; transition:transform 0.3s;">+</span>
+      </div>
+      <div class="faq-answer" style="display:none; padding:0 28px 24px; color:#707080; font-size:14px; line-height:1.7;">
+        В боте нажми "Пополнить" → "Через USDT". Бот выдаст адрес кошелька TRC-20. Переведи USDT на этот адрес — минимум 10 USDT. Баланс зачислится после подтверждения транзакции.
+      </div>
+    </div>
+
+    <div class="faq-item" style="background:#10101A; border:1px solid rgba(255,255,255,0.06); border-radius:14px; overflow:hidden;">
+      <div onclick="toggleFaq(this)" style="padding:24px 28px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:15px; font-weight:500;">
+        Как пополнить через СБП?
+        <span style="font-size:20px; color:#00E5A0; transition:transform 0.3s;">+</span>
+      </div>
+      <div class="faq-answer" style="display:none; padding:0 28px 24px; color:#707080; font-size:14px; line-height:1.7;">
+        В боте нажми "Пополнить" → "Через СБП". Бот выдаст номер телефона для перевода. Переведи рубли через любой российский банк по СБП. Минимум 1000 ₽.
+      </div>
+    </div>
+
+    <div class="faq-item" style="background:#10101A; border:1px solid rgba(255,255,255,0.06); border-radius:14px; overflow:hidden;">
+      <div onclick="toggleFaq(this)" style="padding:24px 28px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:15px; font-weight:500;">
+        Безопасно ли хранить деньги на карте?
+        <span style="font-size:20px; color:#00E5A0; transition:transform 0.3s;">+</span>
+      </div>
+      <div class="faq-answer" style="display:none; padding:0 28px 24px; color:#707080; font-size:14px; line-height:1.7;">
+        Да. Все транзакции защищены стандартом <strong style="color:white;">3D Secure</strong>. Карту можно мгновенно заморозить через бота в случае подозрительной активности.
+      </div>
+    </div>
+
+    <div class="faq-item" style="background:#10101A; border:1px solid rgba(255,255,255,0.06); border-radius:14px; overflow:hidden;">
+      <div onclick="toggleFaq(this)" style="padding:24px 28px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:15px; font-weight:500;">
+        Что делать если карту заблокировали?
+        <span style="font-size:20px; color:#00E5A0; transition:transform 0.3s;">+</span>
+      </div>
+      <div class="faq-answer" style="display:none; padding:0 28px 24px; color:#707080; font-size:14px; line-height:1.7;">
+        Напиши в поддержку <strong style="color:#00E5A0;">@renexpay_support</strong> в Telegram. Мы разберём ситуацию и поможем восстановить доступ или выпустить новую карту.
+      </div>
+    </div>
+
+    <div class="faq-item" style="background:#10101A; border:1px solid rgba(255,255,255,0.06); border-radius:14px; overflow:hidden;">
+      <div onclick="toggleFaq(this)" style="padding:24px 28px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:15px; font-weight:500;">
+        Можно ли иметь несколько карт?
+        <span style="font-size:20px; color:#00E5A0; transition:transform 0.3s;">+</span>
+      </div>
+      <div class="faq-answer" style="display:none; padding:0 28px 24px; color:#707080; font-size:14px; line-height:1.7;">
+        Да, можно заказать несколько карт — как виртуальных так и физических. Каждая карта оплачивается отдельно.
+      </div>
+    </div>
+
+    <div class="faq-item" style="background:#10101A; border:1px solid rgba(255,255,255,0.06); border-radius:14px; overflow:hidden;">
+      <div onclick="toggleFaq(this)" style="padding:24px 28px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:15px; font-weight:500;">
+        Как связаться с поддержкой?
+        <span style="font-size:20px; color:#00E5A0; transition:transform 0.3s;">+</span>
+      </div>
+      <div class="faq-answer" style="display:none; padding:0 28px 24px; color:#707080; font-size:14px; line-height:1.7;">
+        Напиши нам в Telegram: <strong style="color:#00E5A0;">@renexpay_support</strong>. Работаем 24/7. Среднее время ответа — 15 минут.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function toggleFaq(el) {
+  const answer = el.nextElementSibling;
+  const icon = el.querySelector('span');
+  const isOpen = answer.style.display === 'block';
+  document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+  document.querySelectorAll('.faq-item span').forEach(s => { s.textContent = '+'; s.style.transform = 'rotate(0deg)'; });
+  if (!isOpen) {
+    answer.style.display = 'block';
+    icon.textContent = '×';
+  }
+}
+</script>
+
 <!-- PRICING -->
 <section style="padding: 100px 64px; border-top: 1px solid rgba(255,255,255,0.06);" id="pricing">
   <div style="font-size:10px; letter-spacing:4px; text-transform:uppercase; color:#00E5A0; margin-bottom:16px;">Тарифы</div>
