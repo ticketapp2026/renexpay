@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -372,6 +371,21 @@ nav {
       </div>
     </div>
     <div class="rate-card">
+      <div class="rate-flags"><div class="rate-flag">🇦🇪</div><div class="rate-pair">AED / RUB</div></div>
+      <div class="rate-cb">ЦБ РФ: <span id="cb-aed">—</span></div>
+      <div style="font-size:10px;color:var(--gray);margin-bottom:4px;">РЫНОЧНЫЙ КУРС</div>
+      <div class="rate-price" id="forex-aed">—</div>
+      <div class="rate-sell">Продажа: <span id="sell-aed">—</span></div>
+      <div class="rate-badge rate-up" id="change-aed">—</div>
+      <div class="rate-renex">
+        <div class="rate-renex-title">RENEXPAY</div>
+        <div class="rate-renex-row">
+          <div><div class="rate-renex-lbl">Мы купим у вас</div><div class="rate-renex-val" id="r-buy-aed">—</div></div>
+          <div><div class="rate-renex-lbl">Мы продадим вам</div><div class="rate-renex-val" id="r-sell-aed">—</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="rate-card">
       <div class="rate-flags"><div class="rate-flag">💵</div><div class="rate-pair">USDT / RUB</div></div>
       <div class="rate-cb">Binance P2P: <span id="cb-usdt">—</span></div>
       <div style="font-size:10px;color:var(--gray);margin-bottom:4px;">РЫНОЧНЫЙ КУРС</div>
@@ -581,19 +595,20 @@ async function fetchRates() {
   try {
     const r = await fetch('https://open.er-api.com/v6/latest/RUB');
     const d = await r.json();
-    const usd = 1/d.rates.USD, eur = 1/d.rates.EUR, cny = 1/d.rates.CNY;
+    const usd = 1/d.rates.USD, eur = 1/d.rates.EUR, cny = 1/d.rates.CNY, aed = 1/d.rates.AED;
     const rb = await fetch('https://api.binance.com/api/v3/ticker/24hr?symbol=USDTRUB');
     const bd = await rb.json();
     const usdt = parseFloat(bd.lastPrice||92.5), usdtCh = parseFloat(bd.priceChangePercent||0);
     updateRate('usd', usd, usd*0.998, 0.3);
     updateRate('eur', eur, eur*0.998, -0.1);
     updateRate('cny', cny, cny*0.998, 0.2);
+    updateRate('aed', aed, aed*0.998, 0.1);
     updateRateUsdt('usdt', usdt, usdtCh);
     const now = new Date();
     document.getElementById('last-update').textContent = 'Обновлено: ' + now.toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
   } catch(e) {
     updateRate('usd',92.4,91.8,0.3); updateRate('eur',99.8,99.1,-0.1);
-    updateRate('cny',12.6,12.55,0.2); updateRateUsdt('usdt',92.2,0.4);
+    updateRate('cny',12.6,12.55,0.2); updateRate('aed',25.1,24.9,0.1); updateRateUsdt('usdt',92.2,0.4);
   }
 }
 
